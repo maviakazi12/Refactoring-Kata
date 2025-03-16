@@ -2,10 +2,30 @@
 
 namespace Algorithm
 {
-    public class F
-    {
-        public Thing P1 { get; set; }
-        public Thing P2 { get; set; }
-        public TimeSpan D { get; set; }
+    public class StudentAgeComparison
+    { 
+        private Student student1;
+        private Student student2;
+        
+        public static Student Student1{
+            get;
+            set;
+            // get {return student1;}
+            // set {student1 = value;}
+        }
+        
+            
+        public static Student Student2{
+            get;
+            set;
+            // get {return student1;}
+            // set {student1 = value;}
+        }
+        
+            
+        
+        
+        public TimeSpan AgeDifference { get; set; }
     }
-}
+};
+

@@ -2,9 +2,9 @@
 
 namespace Algorithm
 {
-    public class Thing
+    public class Student
     {
-        public string Name { get; set; }
+        public required string Name { get; set; }
         public DateTime BirthDate { get; set; }
     }
 }

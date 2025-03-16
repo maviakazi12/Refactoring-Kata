@@ -4,56 +4,56 @@ namespace Algorithm
 {
     public class Finder
     {
-        private readonly List<Thing> _p;
+        private readonly List<Student> _listOfStudents;
 
-        public Finder(List<Thing> p)
+        public Finder(List<Student> listOfStudents)
         {
-            _p = p;
+            _listOfStudents = listOfStudents;
         }
 
-        public F Find(FT ft)
+        public StudentAgeComparison Find(FT ft)
         {
-            var tr = new List<F>();
+            var studentsAgeComparisonList = new List<StudentAgeComparison>();
 
-            for(var i = 0; i < _p.Count - 1; i++)
+            for(var i = 0; i < _listOfStudents.Count - 1; i++)
             {
-                for(var j = i + 1; j < _p.Count; j++)
+                for(var j = i + 1; j < _listOfStudents.Count; j++)
                 {
-                    var r = new F();
-                    if(_p[i].BirthDate < _p[j].BirthDate)
+                    var studentAgeComparison = new StudentAgeComparison();
+                    if(_listOfStudents[i].BirthDate < _listOfStudents[j].BirthDate)
                     {
-                        r.P1 = _p[i];
-                        r.P2 = _p[j];
+                        studentAgeComparison.Student1 = _listOfStudents[i];
+                        studentAgeComparison.Student2 = _listOfStudents[j];
                     }
                     else
                     {
-                        r.P1 = _p[j];
-                        r.P2 = _p[i];
+                        studentAgeComparison.Student1 = _listOfStudents[j];
+                        studentAgeComparison.Student2 = _listOfStudents[i];
                     }
-                    r.D = r.P2.BirthDate - r.P1.BirthDate;
-                    tr.Add(r);
+                    studentAgeComparison.AgeDifference = studentAgeComparison.Student2.BirthDate - studentAgeComparison.Student1.BirthDate;
+                    studentsAgeComparisonList.Add(studentAgeComparison);
                 }
             }
 
-            if(tr.Count < 1)
+            if(studentsAgeComparisonList.Count < 1)
             {
-                return new F();
+                return new StudentAgeComparison();
             }
 
-            F answer = tr[0];
-            foreach(var result in tr)
+            StudentAgeComparison answer = studentsAgeComparisonList[0];
+            foreach(var result in studentsAgeComparisonList)
             {
                 switch(ft)
                 {
                     case FT.One:
-                        if(result.D < answer.D)
+                        if(result.AgeDifference < answer.AgeDifference)
                         {
                             answer = result;
                         }
                         break;
 
                     case FT.Two:
-                        if(result.D > answer.D)
+                        if(result.AgeDifference > answer.AgeDifference)
                         {
                             answer = result;
                         }
