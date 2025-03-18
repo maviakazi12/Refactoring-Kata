@@ -12,10 +12,11 @@ namespace Algorithm
         }
 
         public StudentAgeComparison FindClosestOrFarthestAgePair(AgeComparison ageComparison)
-        {
+        {   
+        
             var studentsAgeComparisonList =  StudentPairGenerator.GeneratePairs(_listOfStudents);
 
-            return StudentPairSelector.SelectPair();
+            return StudentPairSelector.SelectPair(studentsAgeComparisonList);
             
         }
     }

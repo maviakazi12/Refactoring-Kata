@@ -5,10 +5,10 @@ using System.Collections.Generic;
 namespace Algorithm
 {
     public class StudentPairSelector{
-        public static StudentAgeComparison SelectPair(){
-            var studentsAgeComparisonList = new List<StudentAgeComparison>();
-            StudentAgeComparison bestMatch = studentsAgeComparisonList[0];
-            foreach(var currentComparison in studentsAgeComparisonList)
+        public static StudentAgeComparison SelectPair(List<StudentAgeComparison>studentsAgeComparisonList){
+            var studentsAgeCompareList = new List<StudentAgeComparison>();
+            StudentAgeComparison bestMatch = studentsAgeCompareList[0];
+            foreach(var currentComparison in studentsAgeCompareList)
             {
                 if (currentComparison.AgeDifference < bestMatch.AgeDifference){
                     bestMatch = currentComparison;
