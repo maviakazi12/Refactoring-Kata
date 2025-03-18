@@ -13,15 +13,15 @@ namespace Algorithm
                     var studentAgeComparison = new StudentAgeComparison();
                     if(listOfStudents[i].BirthDate < listOfStudents[j].BirthDate)
                     {
-                        studentAgeComparison.Student1 = listOfStudents[i];
-                        studentAgeComparison.Student2 = listOfStudents[j];
+                        studentAgeComparison.YoungerStudent = listOfStudents[i];
+                        studentAgeComparison.OlderStudent = listOfStudents[j];
                     }
                     else
                     {
-                        studentAgeComparison.Student1 = listOfStudents[j];
-                        studentAgeComparison.Student2 = listOfStudents[i];
+                        studentAgeComparison.YoungerStudent = listOfStudents[j];
+                        studentAgeComparison.OlderStudent = listOfStudents[i];
                     }
-                    studentAgeComparison.AgeDifference = studentAgeComparison.Student2.BirthDate - studentAgeComparison.Student1.BirthDate;
+                    studentAgeComparison.AgeDifference = studentAgeComparison.OlderStudent.BirthDate - studentAgeComparison.YoungerStudent.BirthDate;
                     studentsAgeComparisonList.Add(studentAgeComparison);
                 }
             }
